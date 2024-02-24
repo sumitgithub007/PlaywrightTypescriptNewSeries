@@ -1,4 +1,4 @@
-import {test,expect,Browser,Page, Locator} from '@playwright/test'
+import {test,expect,Browser,Page, Locator, BrowserContext} from '@playwright/test'
 import { createPublicKey } from 'crypto';
 import { channel } from 'diagnostics_channel';
 import {webkit,chromium,firefox}  from 'playwright'
@@ -29,11 +29,11 @@ test.skip('login test',async()=>{ //passing a callback function
 
 })
 
-test('Fill Register Form test',async()=>{ //passing a callback function
+test.skip('Fill Register Form test',async()=>{ //passing a callback function
  
     
     const browser:Browser = await chromium.launch( {headless:false,channel:"chrome",args: ['--incognito=false']})
-    const context:Context = await browser.newContext();
+    const context:BrowserContext = await browser.newContext();
     const page:Page = await context.newPage();
 
 
@@ -94,5 +94,20 @@ await new Promise(()=>{});
 
 
 
+test("Authentication Popup Handle",async()=>{
 
+      const browser:Browser =  await chromium.launch({headless:false,channel:"chrome"});
+      const context:BrowserContext = await browser.newContext();
+      const page:Page  = await context.newPage();
+      
+      const username = "admin";
+      const passwrod = "admin";
 
+      const authentication = 'Basic ' + btoa(username+':'+passwrod);
+      await page.setExtraHTTPHeaders({ Authorization:authentication });
+      
+      await page.goto("https://the-internet.herokuapp.com/basic_auth");
+
+      await new Promise(()=>{});
+
+})
