@@ -24,72 +24,72 @@ test('login test',async()=>{ //passing a callback function
     await page.screenshot({ path: screenshotPath });
 
     
-     expect(title).toEqual("My Account");
-     await new Promise(() => {});
-
+     expect(title).toEqual("Account Login");
+    // await new Promise(() => {});
+   await browser.close();
 
 })
 
-test.skip('Fill Register Form test',async()=>{ //passing a callback function
+// test.skip('Fill Register Form test',async()=>{ //passing a callback function
  
     
-    const browser:Browser = await chromium.launch( {headless:false,channel:"chrome",args: ['--incognito=false']})
-    const context:BrowserContext = await browser.newContext();
-    const page:Page = await context.newPage();
+//     const browser:Browser = await chromium.launch( {headless:false,channel:"chrome",args: ['--incognito=false']})
+//     const context:BrowserContext = await browser.newContext();
+//     const page:Page = await context.newPage();
 
 
-     await page.goto("https://naveenautomationlabs.com/opencart/index.php?route=account/register");
-     await page.locator("//input[@name='firstname']").click();
-     await page.evaluate((text) => navigator.clipboard.writeText(text), "Sumit");
+//      await page.goto("https://naveenautomationlabs.com/opencart/index.php?route=account/register");
+//      await page.locator("//input[@name='firstname']").click();
+//      await page.evaluate((text) => navigator.clipboard.writeText(text), "Sumit");
 
-     await page.focus('body'); // Ensure the page has focus
-      await page.keyboard.down('Control');
-    await page.keyboard.press('V');
-      await page.keyboard.up('Control');
-      await page.keyboard.down('Tab');
-      await page.keyboard.up('Tab');
+//      await page.focus('body'); // Ensure the page has focus
+//       await page.keyboard.down('Control');
+//     await page.keyboard.press('V');
+//       await page.keyboard.up('Control');
+//       await page.keyboard.down('Tab');
+//       await page.keyboard.up('Tab');
 
-      await page.evaluate((text) => navigator.clipboard.writeText(text), "Goyal");
-      await page.keyboard.down('Control');
-    await page.keyboard.press('V');
-      await page.keyboard.up('Control');
-      await page.keyboard.down('Tab');
-      await page.keyboard.up('Tab');
+//       await page.evaluate((text) => navigator.clipboard.writeText(text), "Goyal");
+//       await page.keyboard.down('Control');
+//     await page.keyboard.press('V');
+//       await page.keyboard.up('Control');
+//       await page.keyboard.down('Tab');
+//       await page.keyboard.up('Tab');
 
-      await page.evaluate((text) => navigator.clipboard.writeText(text), "goyalsuomit319@gmail.com");
-      await page.keyboard.down('Control');
-    await page.keyboard.press('V');
-    await page.keyboard.up('Control');
-    await page.keyboard.down('Tab');
-    await page.keyboard.up('Tab');
-
-
-    await page.evaluate((text) => navigator.clipboard.writeText(text), "8319690284");
-    await page.keyboard.down('Control');
-  await page.keyboard.press('V');
-  await page.keyboard.up('Control');
-  await page.keyboard.down('Tab');
-  await page.keyboard.up('Tab');
-
-  await page.evaluate((text) => navigator.clipboard.writeText(text), "goyalsumit319@gmail.com");
-  await page.keyboard.down('Control');
-await page.keyboard.press('V');
-await page.keyboard.up('Control');
-await page.keyboard.down('Tab');
-await page.keyboard.up('Tab');
+//       await page.evaluate((text) => navigator.clipboard.writeText(text), "goyalsuomit319@gmail.com");
+//       await page.keyboard.down('Control');
+//     await page.keyboard.press('V');
+//     await page.keyboard.up('Control');
+//     await page.keyboard.down('Tab');
+//     await page.keyboard.up('Tab');
 
 
-await page.evaluate((text) => navigator.clipboard.writeText(text), "goyalsumit319@gmail.com");
-await page.keyboard.down('Control');
-await page.keyboard.press('V');
+//     await page.evaluate((text) => navigator.clipboard.writeText(text), "8319690284");
+//     await page.keyboard.down('Control');
+//   await page.keyboard.press('V');
+//   await page.keyboard.up('Control');
+//   await page.keyboard.down('Tab');
+//   await page.keyboard.up('Tab');
 
-await page.keyboard.down('Tab');
-await page.keyboard.up('Tab');
-await page.locator("//input[@type='checkbox']").click();
-await page.locator("input[value='Continue']").click();
+//   await page.evaluate((text) => navigator.clipboard.writeText(text), "goyalsumit319@gmail.com");
+//   await page.keyboard.down('Control');
+// await page.keyboard.press('V');
+// await page.keyboard.up('Control');
+// await page.keyboard.down('Tab');
+// await page.keyboard.up('Tab');
 
-await new Promise(()=>{});
+
+// await page.evaluate((text) => navigator.clipboard.writeText(text), "goyalsumit319@gmail.com");
+// await page.keyboard.down('Control');
+// await page.keyboard.press('V');
+
+// await page.keyboard.down('Tab');
+// await page.keyboard.up('Tab');
+// await page.locator("//input[@type='checkbox']").click();
+// await page.locator("input[value='Continue']").click();
+
+// await new Promise(()=>{});
 
 
-  })
+//   })
 

@@ -4,7 +4,7 @@ import { channel } from 'diagnostics_channel';
 import {webkit,chromium,firefox}  from 'playwright'
 import { Context } from 'vm';
  
-test.skip("Authentication Popup Handle",async()=>{
+test("Authentication Popup Handle",async()=>{
 
       const browser:Browser =  await chromium.launch({headless:false,channel:"chrome"});
       const context:BrowserContext = await browser.newContext();
@@ -30,8 +30,8 @@ test.skip("Authentication Popup Handle",async()=>{
       });
       
 
-     
-     
+     await browser.close();
+      
      
       
 
