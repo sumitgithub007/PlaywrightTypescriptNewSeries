@@ -4,7 +4,7 @@ import { channel } from 'diagnostics_channel';
 import {webkit,chromium,firefox}  from 'playwright'
 import { Context } from 'vm';
 
-test.skip('login test',async()=>{ //passing a callback function
+test('login test',async()=>{ //passing a callback function
  
     
   const browser:Browser = await chromium.launch({headless:false,channel:"chrome"})
@@ -25,7 +25,8 @@ test.skip('login test',async()=>{ //passing a callback function
 
     
      expect(title).toEqual("My Account");
-   await browser.close();
+     await new Promise(() => {});
+
 
 })
 
@@ -92,22 +93,3 @@ await new Promise(()=>{});
 
   })
 
-
-
-test("Authentication Popup Handle",async()=>{
-
-      const browser:Browser =  await chromium.launch({headless:false,channel:"chrome"});
-      const context:BrowserContext = await browser.newContext();
-      const page:Page  = await context.newPage();
-      
-      const username = "admin";
-      const passwrod = "admin";
-
-      const authentication = 'Basic ' + btoa(username+':'+passwrod);
-      await page.setExtraHTTPHeaders({ Authorization:authentication });
-      
-      await page.goto("https://the-internet.herokuapp.com/basic_auth");
-
-      await new Promise(()=>{});
-
-})
