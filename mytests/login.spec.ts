@@ -4,11 +4,11 @@ import { channel } from 'diagnostics_channel';
 import {webkit,chromium,firefox}  from 'playwright'
 import { Context } from 'vm';
 
-test('login test',async()=>{ //passing a callback function
+test('login test hahahah',async({page})=>{ //passing a callback function
  
     
-  const browser:Browser = await chromium.launch({headless:false,channel:"chrome"})
-  const page:Page = await browser.newPage();
+  // const browser:Browser = await chromium.launch({headless:false,channel:"chrome"})
+  // const page:Page = await browser.newPage();
    await page.goto("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
    const email:Locator = page.locator("//input[@name='email']");
    const pass:Locator = page.locator("//input[@name='password']");
@@ -24,9 +24,9 @@ test('login test',async()=>{ //passing a callback function
     await page.screenshot({ path: screenshotPath });
 
     
-     expect(title).toEqual("Account Login");
+     expect(title).toEqual("AccouJJnt Login");
     // await new Promise(() => {});
-   await browser.close();
+   await page.close();
 
 })
 
