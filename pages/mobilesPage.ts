@@ -9,6 +9,7 @@ export default class MobilesPage{
 
   async  addFirstProductToCart()
     {
+        
        await expect(this.page.locator("//div[@class='image']/a").first()).toBeVisible();
        await this.page.locator("//div[@class='image']/a").first().hover();
        await expect(this.page.locator("//button[@title='Add to Cart']").first()).toBeVisible();
@@ -18,6 +19,7 @@ export default class MobilesPage{
 
     async WaitForToastVisible_and_click()
     {
+
         const toast = this.page.locator("//a[.='View Cart ']");
        await expect(toast).toBeVisible();
        await toast.click();

@@ -15,6 +15,7 @@ async hoverMegaMenu()
  async clickAppleProduct()
 {
     await this.page.locator("//a[@title='Apple']").click();
+    await this.page.waitForLoadState("networkidle");
 }
 
 }
